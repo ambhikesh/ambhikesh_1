@@ -1,0 +1,9 @@
+body {
+    background-image: url('../assets/background.png');
+}
+
+.contain{
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
