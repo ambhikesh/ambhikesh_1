@@ -1,12 +1,18 @@
 body{
-    margin: 0px;
+    margin: 1rem;
     padding: 0px;
 }
 
 .navbar{
-    margin: 1rem;
+    margin: 1px;
     display: flex;
     justify-content: space-between;
+}
+
+.logo{
+    margin: 1rem;
+    display: grid;
+    place-items: center;
 }
 
 ul{
@@ -16,10 +22,16 @@ ul{
     list-style: none;
 }
 
+li{
+    display: grid;
+    place-items: center;
+    transition: .2s;
+}
+
 li > a {
     font-style:inherit ;
     font-size: large;
-    margin: 1.5rem;
+    margin: 1rem;
     text-decoration: none;
     color: black;
     transition: 1s forwards;
@@ -54,4 +66,15 @@ a:hover{
     color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
+}
+
+li:hover{
+    box-shadow:
+  0.3px 0.4px 2.4px rgba(0, 0, 0, 0.7),
+  0.7px 0.9px 5.8px rgba(0, 0, 0, 0.503),
+  1.3px 1.6px 10.9px rgba(0, 0, 0, 0.417),
+  2.2px 2.9px 19.4px rgba(0, 0, 0, 0.35),
+  4.2px 5.4px 36.3px rgba(0, 0, 0, 0.283),
+  10px 13px 87px rgba(0, 0, 0, 0.197)
+;
 }
