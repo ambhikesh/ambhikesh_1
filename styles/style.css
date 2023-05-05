@@ -1,9 +1,57 @@
-body {
-    background-image: url('../assets/background.png');
+body{
+    margin: 0px;
+    padding: 0px;
 }
 
-.contain{
+.navbar{
+    margin: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+ul{
+    display: flex;
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+}
+
+li > a {
+    font-style:inherit ;
+    font-size: large;
+    margin: 1.5rem;
+    text-decoration: none;
+    color: black;
+    transition: 1s forwards;
+}
+
+.center{
     display: grid;
     place-items: center;
-    height: 100vh;
+    height: 75vh;
+}
+
+.name{
+    font-size: 60px;
+    font-weight: 600;
+    background-image: radial-gradient(circle, #553c9a, #ee4b2b);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.name-header{
+    font-size: 30px;
+    font-weight: 600;
+    background-image: radial-gradient(circle, #553c9a, #ee4b2b);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+a:hover{
+    background-image: radial-gradient(circle, #553c9a, #ee4b2b);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
 }
