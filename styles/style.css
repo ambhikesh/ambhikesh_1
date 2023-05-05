@@ -17,6 +17,7 @@ body{
 
 ul{
     display: flex;
+    justify-content: center;
     padding: 0px;
     margin: 0px;
     list-style: none;
@@ -25,6 +26,8 @@ ul{
 li{
     display: grid;
     place-items: center;
+    border-radius: 1rem;
+    cursor: pointer;
     transition: .2s;
 }
 
@@ -41,6 +44,8 @@ li > a {
     display: grid;
     place-items: center;
     height: 75vh;
+    box-shadow: 0px 0px 80px rgba(0, 0, 0, 0.10);
+    border-radius: 1rem;
 }
 
 .name{
@@ -70,11 +75,11 @@ a:hover{
 
 li:hover{
     box-shadow:
-  0.3px 0.4px 2.4px rgba(0, 0, 0, 0.7),
-  0.7px 0.9px 5.8px rgba(0, 0, 0, 0.503),
-  1.3px 1.6px 10.9px rgba(0, 0, 0, 0.417),
-  2.2px 2.9px 19.4px rgba(0, 0, 0, 0.35),
-  4.2px 5.4px 36.3px rgba(0, 0, 0, 0.283),
-  10px 13px 87px rgba(0, 0, 0, 0.197)
-;
+    0px 0px 80px rgba(0, 0, 0, 0.30)
+  ;
+}
+
+#contain{
+    transform-style:preserve-3d ;
+    transform: perspective(5000px) rotateY(var(--rotateY)) rotateX(var(--rotateX));
 }
