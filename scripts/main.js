@@ -19,3 +19,32 @@ function rotateElement(event, element){
     element.style.setProperty("--rotateX",-1*offsetY+"deg");
     element.style.setProperty("--rotateY",offsetX+"deg");
 }
+
+//Modal-Script
+
+//about
+
+const abtModal = document.getElementById("about-modal");
+const abtBtn = document.getElementById("aboutBtn")
+const projModal = document.getElementById("project-modal");
+const projBtn = document.getElementById("projectBtn")
+const contactModal = document.getElementById("contact-modal");
+const contactBtn = document.getElementById("contactBtn")
+
+abtBtn.onclick = ()=>{
+    abtModal.style.display = "block";
+}
+
+projBtn.onclick = ()=>{
+    projModal.style.display = "block";
+}
+
+contactBtn.onclick = ()=>{
+    contactModal.style.display = "block";
+}
+
+window.onclick = (event)=>{
+    if(event.target == abtModal ||event.target == projModal ||event.target == contactModal ){
+        event.target.style.display = "none";
+    }
+}
