@@ -38,7 +38,7 @@ li > a {
     font-size: large;
     margin: 1rem;
     text-decoration: none;
-    color: rgb(0, 0, 0);
+    color: white;
     font-size: large;
     font-weight: bolder;
     transition: 1s forwards;
@@ -48,14 +48,14 @@ li > a {
     display: grid;
     place-items: center;
     height: 75vh;
-    box-shadow: 0px 0px 80px rgba(0, 0, 0, 0.10);
+    box-shadow: 0px 0px 80px rgba(0, 0, 0, 0.0);
     border-radius: 1rem;
 }
 
 .name{
     font-size: 60px;
     font-weight: 600;
-    background-image: radial-gradient(circle, #553c9a, #ee4b2b);
+    background-image: linear-gradient(to bottom right,#d19200,#ffffff);
     color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
@@ -64,14 +64,21 @@ li > a {
 .name-header{
     font-size: 30px;
     font-weight: 600;
-    background-image: radial-gradient(circle, #553c9a, #ee4b2b);
+    background-image: linear-gradient(to bottom right,#d19200,#ffffff);
     color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
 }
 
+.contact{
+    background-image: linear-gradient(to bottom right,#885f00,#ffffff);
+    color:transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
 a:hover{
-    background-image: radial-gradient(circle, #553c9a, #ee4b2b);
+    background-image: linear-gradient(to bottom right,#d19200,#ffffff);
     color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
@@ -79,7 +86,7 @@ a:hover{
 
 li:hover{
     box-shadow:
-    0px 0px 80px #ee4c2b5b
+    0px 0px 200px #5c4000
   ;
 }
 
@@ -97,4 +104,162 @@ li:hover{
   border:1px solid black;
   color:black;
   text-align: center;
+}
+
+.main{
+    position: fixed;
+    left:0;
+    right: 0;
+    top:0;
+    width: 100%;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    font-family: 'Exo', sans-serif;
+}
+
+
+.context {
+    width: 100%;
+    position: absolute;
+    top:50vh;
+    
+}
+
+.context h1{
+    text-align: center;
+    color: #fff;
+    font-size: 50px;
+}
+
+
+.area{
+    background: #03001C;  
+    background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);  
+    width: 100%;
+    height:100vh;
+    
+   
+}
+
+.circles{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.circles li{
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    animation: animate 25s linear infinite;
+    bottom: -150px;
+    
+}
+
+.circles li:nth-child(1){
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+
+
+.circles li:nth-child(2){
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+}
+
+.circles li:nth-child(3){
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+}
+
+.circles li:nth-child(4){
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.circles li:nth-child(5){
+    left: 65%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+}
+
+.circles li:nth-child(6){
+    left: 75%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+}
+
+.circles li:nth-child(7){
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 7s;
+}
+
+.circles li:nth-child(8){
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+}
+
+.circles li:nth-child(9){
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+}
+
+.circles li:nth-child(10){
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+
+
+@keyframes animate {
+
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+
+    100%{
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+
 }
