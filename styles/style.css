@@ -1,12 +1,14 @@
 body{
-    margin: 1rem;
+    margin: 0rem;
     padding: 0px;
+    /*background-image: url("/assets/background.png")*/;
 }
 
 .navbar{
     margin: 1px;
     display: flex;
     justify-content: space-between;
+    color: white;
 }
 
 .logo{
@@ -36,7 +38,9 @@ li > a {
     font-size: large;
     margin: 1rem;
     text-decoration: none;
-    color: black;
+    color: rgb(0, 0, 0);
+    font-size: large;
+    font-weight: bolder;
     transition: 1s forwards;
 }
 
@@ -75,11 +79,22 @@ a:hover{
 
 li:hover{
     box-shadow:
-    0px 0px 80px rgba(0, 0, 0, 0.30)
+    0px 0px 80px #ee4c2b5b
   ;
 }
 
 #contain{
     transform-style:preserve-3d ;
     transform: perspective(5000px) rotateY(var(--rotateY)) rotateX(var(--rotateX));
+}
+
+.bottom{
+  position:fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  border:1px solid black;
+  color:black;
+  text-align: center;
 }
