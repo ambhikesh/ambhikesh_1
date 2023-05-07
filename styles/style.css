@@ -275,26 +275,24 @@ body{
     height: 100%;
     overflow: auto;
     background-color: white;
-    background-color: rgba(255, 255, 255, 0.39);
+    background-color: rgba(0, 0, 0, 0.658);
 }
 
 .modal-content{
     background-color: #fefefe;
     margin: 15% auto;
     padding: 20px;
-    border: 1px solid #888;
+    border: 1px solid #0000007c;
     width: 80%;
+    animation-name: animatetop;
+    animation-duration: 0.4s
 }
 
-.close{
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bolder;
+.is-blurred{
+    filter: blur(5px);
 }
 
-.close:hover, .close:focus{
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+  }
