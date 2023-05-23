@@ -19,32 +19,27 @@ function rotateElement(event, element){
     element.style.setProperty("--rotateX",-1*offsetY+"deg");
     element.style.setProperty("--rotateY",offsetX+"deg");
 }
+const modalButtons = document.querySelectorAll("[data-modal-target]");
+const closeButtons = document.querySelectorAll("[data-modal-close]");
+const container = document.querySelector(".container"); 
 
-//Modal-Script
-
-//about
-
-const abtModal = document.getElementById("about-modal");
-const abtBtn = document.getElementById("aboutBtn")
-const projModal = document.getElementById("project-modal");
-const projBtn = document.getElementById("projectBtn")
-const contactModal = document.getElementById("contact-modal");
-const contactBtn = document.getElementById("contactBtn")
-
-abtBtn.onclick = ()=>{
-    abtModal.style.display = "block";
-}
-
-projBtn.onclick = ()=>{
-    projModal.style.display = "block";
-}
-
-contactBtn.onclick = ()=>{
-    contactModal.style.display = "block";
-}
-
-window.onclick = (event)=>{
-    if(event.target == abtModal ||event.target == projModal ||event.target == contactModal ){
-        event.target.style.display = "none";
+modalButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const targetModal = document.querySelector(button.dataset.modalTarget);
+    if (targetModal) {
+      targetModal.showModal();
+      container.classList.add("blur-background"); 
     }
-}
+  });
+});
+
+closeButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const modal = button.closest("dialog");
+    if (modal) {
+      modal.close();
+      container.classList.remove("blur-background"); 
+    }
+  });
+});
+

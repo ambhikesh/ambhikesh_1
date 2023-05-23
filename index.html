@@ -32,42 +32,44 @@
         </ul>
     </div >
     <div class="main">
-        <div class="navbar">
-            <div class="logo"><img src="/assets/android-chrome-192x192.png" height="64px" alt="logo" class="logo-img"></div>
-            <div class="nav-links">
-                <ul>
-                    <li id="aboutBtn" class="link"><a href="#">About Me</a></li>
-                    <li id ="projectBtn" class="link"><a href="#">My projects</a></li>
-                    <li id="contactBtn" class="link"><a href="#">Contact Me</a></li>
-                </ul>
+        <div class="container">
+            <div class="navbar">
+                <div class="logo"><img src="/assets/android-chrome-192x192.png" height="64px" alt="logo" class="logo-img"></div>
+                <div class="nav-links">
+                    <ul>
+                        <li id="aboutBtn" class="link"><button data-modal-target="#aboutModal">About</button></li>
+                        <li id="projectBtn" class="link"><button data-modal-target="#projectModal">Projects</button></li>
+                        <li id="contactBtn" class="link"><button data-modal-target="#contactModal">Contact Me</button></li>
+                    </ul>
+                </div>
+            </div>
+    
+            <dialog id="aboutModal" class="modal">
+                <div>T'is the About modal</div>
+                <button data-modal-close>Close</button>
+            </dialog>
+    
+            <dialog id="projectModal" class="modal">
+                <div>T'is the Projects modal</div>
+                <button data-modal-close>Close</button>
+            </dialog>
+    
+            <dialog id="contactModal" class="modal">
+                <div>T'is the Contact modal</div>
+                <button data-modal-close>Close</button>
+            </dialog>
+    
+            <div class="center">
+                <div class="contain" id="contain">
+                    <div class="name-header">Hello, I am</div>
+                    <div class="name">Ambhikesh</div>
+                    <div class="contact">A Computer Science undergraduate</div>
+                </div>
             </div>
         </div>
-        <div class="center">
-            <div id="contain">
-                <div class="name-header">Hello I am </div>
-                <div class="name">Ambhikesh</div>
-                <div class="contact">A Computer Science undergraduate</div>
-            </div>
-        </div>
-        <div id="about-modal" class="modal">
-            <div class="modal-content">
-                <p>Some text in about</p>
-            </div>
-        </div>
-        <div id="project-modal" class="modal">
-            <div class="modal-content">
-                <p>Some text in project</p>
-            </div>
-        </div>
-        <div id="contact-modal" class="modal">
-            <div class="modal-content">
-                <p>Some text incontact </p>
-            </div>
-        </div>
-        <!--div class="bottom">
-            This is the bottom
-        </div-->
     </div>
+    
+    
 
 
 </body>

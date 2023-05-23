@@ -2,6 +2,7 @@ body{
     margin: 0rem;
     padding: 0px;
     /*background-image: url("/assets/background.png")*/;
+    overflow: hidden;
 }
 
 .navbar{
@@ -47,9 +48,10 @@ li > a {
 .center{
     display: grid;
     place-items: center;
-    height: 75vh;
+    height: 80vh;
     box-shadow: 0px 0px 80px rgba(0, 0, 0, 0.0);
     border-radius: 1rem;
+    z-index: 10;
 }
 
 .name{
@@ -77,11 +79,13 @@ li > a {
     -webkit-background-clip: text;
 }
 
-a:hover{
+.link button:hover{
     background-image: linear-gradient(to bottom right,#d19200,#ffffff);
     color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
+    cursor: pointer;
+    
 }
 
 li:hover{
@@ -95,7 +99,7 @@ li:hover{
     transform: perspective(5000px) rotateY(var(--rotateY)) rotateX(var(--rotateX));
 }
 
-.bottom{
+/*.bottom{
   position:fixed;
   left: 0;
   right: 0;
@@ -103,8 +107,10 @@ li:hover{
   width: 100%;
   border:1px solid black;
   color:black;
+  font-size: 18rem;
+  font-weight: bolder;
   text-align: center;
-}
+}*/
 
 .main{
     position: fixed;
@@ -121,9 +127,6 @@ li:hover{
     padding: 0px;
 }
 
-body{
-    font-family: 'Exo', sans-serif;
-}
 
 
 .context {
@@ -264,35 +267,42 @@ body{
 
 }
 
-/*The modal styling*/
-.modal{
-    display: none;
+
+/*MAIN < CONTAINER*/
+.container{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    user-select: none;
+}
+
+.blur-background {
+    filter: blur(2px);
+  }
+  
+  .blur-background::after {
+    content: "";
     position: fixed;
-    z-index: 1;
-    left: 0;
     top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
-    background-color: white;
-    background-color: rgba(0, 0, 0, 0.658);
-}
-
-.modal-content{
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #0000007c;
-    width: 80%;
-    animation-name: animatetop;
-    animation-duration: 0.4s
-}
-
-.is-blurred{
-    filter: blur(5px);
-}
-
-@keyframes animatetop {
-    from {top: -300px; opacity: 0}
-    to {top: 0; opacity: 1}
+    pointer-events: none;
   }
+  
+.modal{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index:9999;
+}
+
+.link button{
+    margin: 1rem;
+    font-size: 1rem;
+    background: none;
+    border: none;
+    font: inherit;
+    color:whitesmoke;
+}
