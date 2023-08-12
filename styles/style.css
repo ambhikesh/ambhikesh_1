@@ -3,6 +3,7 @@ body{
     padding: 0px;
     /*background-image: url("/assets/background.png")*/;
     overflow: hidden;
+    background: #03001C;
 }
 
 .navbar{
@@ -85,7 +86,6 @@ li > a {
     background-clip: text;
     -webkit-background-clip: text;
     cursor: pointer;
-    
 }
 
 li:hover{
@@ -133,7 +133,6 @@ li:hover{
     width: 100%;
     position: absolute;
     top:50vh;
-    
 }
 
 .context h1{
@@ -144,12 +143,10 @@ li:hover{
 
 
 .area{
-    background: #03001C;  
+    background:#03001C;
     background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);  
     width: 100%;
     height:100vh;
-    
-   
 }
 
 .circles{
@@ -170,7 +167,6 @@ li:hover{
     background: rgba(255, 255, 255, 0.2);
     animation: animate 25s linear infinite;
     bottom: -150px;
-    
 }
 
 .circles li:nth-child(1){
@@ -278,9 +274,14 @@ li:hover{
 
 .blur-background {
     filter: blur(2px);
-  }
-  
-  .blur-background::after {
+    transition: all;
+    animation-delay: 100ms;
+    -webkit-transition: all;
+    -moz-transition: all;
+    -ms-transition: all;
+    -o-transition: all;
+}
+.blur-background::after {
     content: "";
     position: fixed;
     top: 0;
@@ -288,14 +289,29 @@ li:hover{
     width: 100%;
     height: 100%;
     pointer-events: none;
-  }
-  
+}
+
 .modal{
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+    background:rgb(14, 13, 42);
     z-index:9999;
+    border: none;
+    border-radius:4px;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    -ms-border-radius:4px;
+    -o-border-radius:4px;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0;
+}
+
+.modal.show{
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
 }
 
 .link button{
@@ -306,3 +322,59 @@ li:hover{
     font: inherit;
     color:whitesmoke;
 }
+
+.contact{
+    margin-top: 2 rem;
+    transition: cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+.contact h2{
+    text-align: center;
+    margin-bottom: var(--bottom-margin-2);
+}
+
+.contact-form-container {
+    max-width: 40.75rem;
+    margin: 0 auto;
+    padding: 0.938rem;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px var(--secondary-shadow);
+}
+.contact-form-container label {
+    line-height: 2.7em;
+    font-weight: var(--bold-font);
+    color: var(--primary-color);
+}
+
+.contact-form-container textarea {
+    min-height: 6.25rem;
+    font-size: 14px;
+}
+
+.contact-form-container .input-field {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    border: none;
+    border: 2px outset var(--primary-color);
+    font-size: 0.875rem;
+    outline: none;
+}
+.input-field::placeholder {
+    padding: 0.5rem;
+    color: var(--primary-color);
+}
+
+.submit-btn, .close {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #fff;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: var(--bold-font);
+    transition: var(--transition);
+}
+

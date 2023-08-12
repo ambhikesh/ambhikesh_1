@@ -21,14 +21,18 @@ function rotateElement(event, element){
 }
 const modalButtons = document.querySelectorAll("[data-modal-target]");
 const closeButtons = document.querySelectorAll("[data-modal-close]");
-const container = document.querySelector(".container"); 
+const container = document.querySelector(".container");
+const area = document.querySelector(".area")
 
 modalButtons.forEach((button) => {
   button.addEventListener("click", () => {
     const targetModal = document.querySelector(button.dataset.modalTarget);
     if (targetModal) {
       targetModal.showModal();
-      container.classList.add("blur-background"); 
+      container.classList.add("blur-background");
+      area.classList.add("blur-background");
+      targetModal.classList.remove("hide");
+      targetModal.classList.add("show");
     }
   });
 });
@@ -37,9 +41,17 @@ closeButtons.forEach((button) => {
   button.addEventListener("click", () => {
     const modal = button.closest("dialog");
     if (modal) {
-      modal.close();
-      container.classList.remove("blur-background"); 
+      modal.classList.add("hide");
+      modal.classList.remove("show");
+
+      setTimeout(() => {
+        modal.close();
+        container.classList.remove("blur-background");
+        area.classList.remove("blur-background");
+        modal.classList.remove("hide");
+      }, 300);
     }
   });
 });
+
 
